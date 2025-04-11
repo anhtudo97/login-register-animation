@@ -5,14 +5,11 @@ on:
     branches: [ production ]
 
 jobs:
-  
   deploy:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/vps@master
     - name: Deploy using ssh
+      uses: actions/vps@master
       with: 
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
