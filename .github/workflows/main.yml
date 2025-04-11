@@ -24,7 +24,7 @@ jobs:
         #   docker stop login || true
         #   docker rm login || true
         #   docker run -d --name login-container -p 4000:4173 login
-    - run: cd /code/login-register-animation
+    - run: cd /root/code/login-register-animation
     - run: git fetch origin
     - run: git checkout production
     - run: git pull
