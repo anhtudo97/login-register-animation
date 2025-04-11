@@ -8,8 +8,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout
+      uses: actions/checkout@v4
     - name: Deploy using ssh
-      uses: actions/vps@master
+      uses: actions/setup-node@v4
       with: 
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
