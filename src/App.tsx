@@ -17,7 +17,7 @@ function App() {
     <div className={twMerge("container", active && "active")}>
       <div className="form-box login">
         <form action="#">
-          <h1>Login</h1>
+          <h1>Sign in</h1>
           <div className="input-box">
             <input type="text" placeholder="Username" required />
             <i className='bx bxs-user'></i>
