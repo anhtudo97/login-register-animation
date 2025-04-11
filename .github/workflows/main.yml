@@ -15,20 +15,20 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: 22
-        # script: 
-        #   cd /code/login-register-animation
-        #   git fetch origin
-        #   git checkout production
-        #   git pull
-        #   docker build -t login .
-        #   docker stop login || true
-        #   docker rm login || true
-        #   docker run -d --name login-container -p 4000:4173 login
-    - run: cd /root/code/login-register-animation
-    - run: git fetch origin
-    - run: git checkout production
-    - run: git pull
-    - run: docker build -t login .
-    - run: docker stop login || true
-    - run: docker rm login || true
-    - run: docker run -d --name login-container -p 4000:4173 login
+        script: |
+          cd ~/code/login-register-animation
+          git fetch origin
+          git checkout production
+          git pull
+          docker build -t login .
+          docker stop login || true
+          docker rm login || true
+          docker run -d --name login-container -p 4000:4173 login
+    # - run: cd /root/code/login-register-animation
+    # - run: git fetch origin
+    # - run: git checkout production
+    # - run: git pull
+    # - run: docker build -t login .
+    # - run: docker stop login || true
+    # - run: docker rm login || true
+    # - run: docker run -d --name login-container -p 4000:4173 login
