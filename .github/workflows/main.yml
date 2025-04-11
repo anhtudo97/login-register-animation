@@ -1,0 +1,30 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ production ]
+
+jobs:
+  
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/vps@master
+    - name: Deploy using ssh
+      with: 
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        script: 
+          cd /code/login-register-animation
+          git fetch origin
+          git checkout production
+          git pull
+          docker build -t login .
+          docker stop login || true
+          docker rm login || true
+          docker run -d --name login-container -p 4000:4173 login
+          
