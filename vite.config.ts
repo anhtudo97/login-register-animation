@@ -14,5 +14,6 @@ export default defineConfig({
   },
   preview: {
     host: true,
+    allowedHosts: ["loginchange.xyz"]
   }
 });
