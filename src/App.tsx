@@ -1,17 +1,17 @@
 import { twMerge } from 'tailwind-merge';
 import './App.css';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 function App() {
   const [active, setActive] = useState(false);
-  
-  const onLogin = () => {
-    setActive(true);
-  };
 
-  const onRegister = () => {
+  const onLogin = useCallback(() => {
+    setActive(true);
+  }, []);
+
+  const onRegister = useCallback(() => {
     setActive(false);
-  };
+  }, []);
 
   return (
     <div className={twMerge("container", active && "active")}>
