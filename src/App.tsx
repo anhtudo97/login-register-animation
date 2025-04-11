@@ -42,7 +42,7 @@ function App() {
 
       <div className="form-box register">
         <form action="#">
-          <h1>Registration</h1>
+          <h1>Sign up</h1>
           <div className="input-box">
             <input type="text" placeholder="Username" required />
             <i className='bx bxs-user'></i>
